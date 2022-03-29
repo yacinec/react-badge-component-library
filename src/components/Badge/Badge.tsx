@@ -9,15 +9,17 @@ interface BadgeProps {
 
 const Badge = (props: BadgeProps) => {
   return (
-    <div
-      className='react-badge'
-      style={props.color ? { background: props.color } : {}}
-    >
+    <div className='react-badge'>
       {props.text}
       {props.number === 0 ? (
         <></>
       ) : (
-        <div className='floating-number'>{props.number}</div>
+        <div
+          className='floating-number'
+          style={props.color ? { background: props.color } : {}}
+        >
+          {props.number}
+        </div>
       )}
     </div>
   );
